@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% load car_filters %}
+    Total cars: {% count object_list 1234 kw=123%}
+    <table>
+        <tr>
+            <th>Car name</th><th>Reg #</th><th>Owner</th>>
+        </tr>
+        <tr>
+            {% superif 1=10 or True %}
+            {% cars_in_garage as cars %}
+            {% for car in object_list %}
+        </tr>
+        <tr>
+            <td>{{car.name }} </td>
+            <td>{{car.reg_num }}</td>
+            <td>{{car.user }}</td>
+        </tr>>
+        {% endfor %}
+        {% endsuperif %}
+    </table>
+</body>
+</html>
